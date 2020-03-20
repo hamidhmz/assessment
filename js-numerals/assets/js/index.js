@@ -1,0 +1,1 @@
+//main js file module should be loaded in here
