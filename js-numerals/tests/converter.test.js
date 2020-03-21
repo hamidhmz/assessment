@@ -1,4 +1,4 @@
-import numberToWordMain from '../public/assets/js/converter/index.js';
+import { numberToWordMain } from '../public/assets/js/converter/modules/index.js';
 
 // NOTE: these are not special numbers these are just random numbers
 describe('Convert number to word', () => {
@@ -10,7 +10,7 @@ describe('Convert number to word', () => {
         expect(numberToWordMain(1)).toBe('one');
     });
     it('should return word of two digit number less than 20', () => {
-        expect(numberToWordMain(12)).toBe('eleven');
+        expect(numberToWordMain(11)).toBe('eleven');
         expect(numberToWordMain(19)).toBe('nineteen');
         expect(numberToWordMain(15)).toBe('fifteen');
         expect(numberToWordMain(10)).toBe('ten');
@@ -45,6 +45,7 @@ describe('Convert number to word', () => {
         );
         expect(numberToWordMain(9900)).toBe('nine thousand nine hundred');
     });
+
     it('should return word of octillion number', () => {
         expect(numberToWordMain(158496358785200664887862315154)).toBe(
             'one hundred fifty eight octillion four hundred ninety six septillion three hundred fifty eight sextillion seven hundred eighty five quintillion two hundred quadrillion six hundred sixty four trillion eight hundred eighty seven billion eight hundred sixty two million three hundred fifteen thousand one hundred and fifty four'
@@ -73,7 +74,7 @@ describe('Convert number to word', () => {
             'nine hundred septillion'
         );
     });
-    it('should return word of septillion number', () => {
+    it('should return word of sextillion number', () => {
         expect(numberToWordMain(158496358785200664887862)).toBe(
             'one hundred fifty eight sextillion four hundred ninety six quintillion three hundred fifty eight quadrillion seven hundred eighty five trillion two hundred billion six hundred sixty four million eight hundred eighty seven thousand eight hundred and sixty two'
         );
@@ -152,8 +153,12 @@ describe('Convert number to word', () => {
         );
     });
     it('should return word of float number', () => {
-        expect(numberToWordMain(88.5484)).toBe('eighty eight point five four eight four');
-        expect(numberToWordMain(752.114)).toBe('seven hundred and fifty two point one one four');
+        expect(numberToWordMain(88.5484)).toBe(
+            'eighty eight point five four eight four'
+        );
+        expect(numberToWordMain(752.114)).toBe(
+            'seven hundred and fifty two point one one four'
+        );
         expect(numberToWordMain(0.15)).toBe('zero point one five');
     });
 });
