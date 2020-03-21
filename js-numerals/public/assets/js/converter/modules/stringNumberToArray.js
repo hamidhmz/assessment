@@ -12,9 +12,10 @@
 /* -------------------------------------------------------------------------- */
 /*                      string to array each field 3 char                     */
 /* -------------------------------------------------------------------------- */
+import { fixSizeOfNumber } from './index.js';
 
 export function stringNumberToArray(strNumber) {
-    // TODO change name of the function
+    strNumber = fixSizeOfNumber(strNumber);
     return [...strNumber]
         .reverse()
         .join('')

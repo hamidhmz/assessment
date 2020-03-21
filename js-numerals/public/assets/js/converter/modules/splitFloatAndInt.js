@@ -1,6 +1,6 @@
 export function splitFloatAndInt(strNumber) {
     return {
-        intNumber: strNumber.split('.')[0],
-        floatNumber: strNumber.split('.')[1]
+        strInt: strNumber.split('.')[0],
+        strFloat: strNumber.split('.')[1]
     };
 }

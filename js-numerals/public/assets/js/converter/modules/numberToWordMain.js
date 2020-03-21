@@ -15,16 +15,11 @@ import {
     fixSizeOfNumber,
     stringNumberToArray,
     intToWord,
-    floatToWord,
     createFinalResult,
     negativeDetecter,
     floatDetectAndToWord,
-    getD1,
-    getD2,
-    getD3,
-    numberToWords
+    removeNegativeSign
 } from './index.js';
-import { units } from '../constants/index.js';
 
 /***************************
  * INPUT MUST BE IN STRING *
@@ -34,26 +29,17 @@ export function numberToWordMain(num) {
 
     let strNumber = removeAdditionalChar(num);
 
-    let strFloat = splitFloatAndInt(strNumber).floatNumber;
+    let { strFloat, strInt } = splitFloatAndInt(strNumber);
 
-    let strInt = splitFloatAndInt(strNumber).intNumber;
+    const negative = negativeDetecter(strInt); //return true or false //
 
-    const negative = negativeDetecter(strInt).isNegative; //return true or false
-    strInt = negativeDetecter(strInt).strNumber;
-    strInt = fixSizeOfNumber(strInt);
+    strInt = removeNegativeSign(strInt);// if exists
 
     strInt = stringNumberToArray(strInt);
 
-    const intWord = intToWord(
-        numberToWords,
-        getD1,
-        getD2,
-        getD3,
-        units,
-        strInt
-    );
+    const intWord = intToWord(strInt);
 
-    const floatWord = floatDetectAndToWord(strFloat, floatToWord, getD1, units); //return number or ''
+    const floatWord = floatDetectAndToWord(strFloat); //return number or ''
 
     return createFinalResult(negative, intWord, floatWord);
 }
