@@ -9,6 +9,10 @@
  
 */
 
-export function createFinalResult(intWord, floatWord) {
-    return ((intWord ? intWord : 'zero ') + (floatWord ? floatWord : '')).trim();
+export function createFinalResult(negative, intWord, floatWord) {
+    return (
+        (negative ? 'negative ' : '') +
+        (intWord ? intWord : 'zero ') +
+        (floatWord ? floatWord : '')
+    ).trim();
 }

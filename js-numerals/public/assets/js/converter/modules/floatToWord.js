@@ -8,9 +8,8 @@
                                                               
  
 */
-import { getD1 } from './index.js';
-import { units } from '../constants/index.js';
-export function floatToWord(float) {
+
+export function floatToWord(float, getD1, units) {
     return float.reduce((result, value, i) => {
         let tempResult = '';
         [...value].forEach(element => {

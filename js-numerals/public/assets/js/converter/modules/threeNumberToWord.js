@@ -13,9 +13,7 @@
 /*                              3 number to words                             */
 /* -------------------------------------------------------------------------- */
 
-import { getD1, getD2, getD3 } from './index.js';
-export function numberToWords(units, i, d1, d2, d3) {
-    // TODO change the name of the function
+export function numberToWords(getD1, getD2, getD3, units, i, d1, d2, d3) {
     const d3Result = +d3 ? getD3(d3, units) : '';
     const d2Result = +d2 ? getD2(d2, units) : '';
     const d1Result = getD1(d1, +!Boolean(d2Result || +d2 - 1), units);

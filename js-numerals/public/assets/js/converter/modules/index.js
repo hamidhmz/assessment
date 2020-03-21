@@ -8,8 +8,10 @@ import { numberToWords } from './threeNumberToWord.js';
 import { intToWord } from './intToWord.js';
 import { floatToWord } from './floatToWord.js';
 import { splitFloatAndInt } from './splitFloatAndInt.js';
-import { numberToString } from './numberToString.js';
+import { removeAdditionalChar } from './removeAdditionalChar.js';
 import { createFinalResult } from './createResult.js';
+import { negativeDetecter } from './negativeDetecter.js';
+import { floatDetectAndToWord } from './floatDetectAndToWord.js';
 
 export {
     numberInput,
@@ -25,7 +27,8 @@ export {
     intToWord,
     floatToWord,
     splitFloatAndInt,
-    numberToString,
+    removeAdditionalChar,
     createFinalResult,
-
+    negativeDetecter,
+    floatDetectAndToWord
 };

@@ -8,16 +8,24 @@
                    |___/                                                
  
 */
-import { numberToWords } from './index.js';
-export function intToWord(negative, units, strNumber) {
-    return strNumber.reduce((result, value, i) => {
-        const tempResult = numberToWords(units, i, ...value);
 
-        return (
-            (negative ? 'negative ' : '') +
-            tempResult +
-            (tempResult ? units[i][3] : '') +
-            result
+export function intToWord(
+    numberToWords,
+    getD1,
+    getD2,
+    getD3,
+    units,
+    strNumber
+) {
+    return strNumber.reduce((result, value, i) => {
+        const tempResult = numberToWords(
+            getD1,
+            getD2,
+            getD3,
+            units,
+            i,
+            ...value
         );
+        return tempResult + (tempResult ? units[i][3] : '') + result;
     }, '');
 }
