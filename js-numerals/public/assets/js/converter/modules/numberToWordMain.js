@@ -12,11 +12,10 @@ import {
     validate,
     removeAdditionalChar,
     splitFloatAndInt,
-    fixSizeOfNumber,
     stringNumberToArray,
     intToWord,
     createFinalResult,
-    negativeDetecter,
+    negativeDetector,
     floatDetectAndToWord,
     removeNegativeSign
 } from './index.js';
@@ -31,7 +30,7 @@ export function numberToWordMain(num) {
 
     let { strFloat, strInt } = splitFloatAndInt(strNumber);
 
-    const negative = negativeDetecter(strInt); //return true or false //
+    const negative = negativeDetector(strInt); //return true or false //
 
     strInt = removeNegativeSign(strInt);// if exists
 

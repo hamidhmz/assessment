@@ -8,7 +8,7 @@
                                             |___/                                                               
  
 */
-export function negativeDetecter(strNumber) {
+export function negativeDetector(strNumber) {
     if (strNumber.startsWith('-')) {
         return true;
     }

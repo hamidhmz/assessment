@@ -9,7 +9,7 @@ import { floatToWord } from './floatToWord.js';
 import { splitFloatAndInt } from './splitFloatAndInt.js';
 import { removeAdditionalChar } from './removeAdditionalChar.js';
 import { createFinalResult } from './createResult.js';
-import { negativeDetecter } from './negativeDetecter.js';
+import { negativeDetector } from './negativeDetector.js';
 import { floatDetectAndToWord } from './floatDetectAndToWord.js';
 import { removeNegativeSign } from './removeNegativeSign.js';
 
@@ -27,7 +27,7 @@ export {
     splitFloatAndInt,
     removeAdditionalChar,
     createFinalResult,
-    negativeDetecter,
+    negativeDetector,
     floatDetectAndToWord,
     removeNegativeSign
 };
