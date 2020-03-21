@@ -12,19 +12,13 @@ import {
     validate,
     removeAdditionalChar,
     splitFloatAndInt,
-    fixSizeOfNumber,
     stringNumberToArray,
     intToWord,
-    floatToWord,
     createFinalResult,
-    negativeDetecter,
+    negativeDetector,
     floatDetectAndToWord,
-    getD1,
-    getD2,
-    getD3,
-    numberToWords
+    removeNegativeSign
 } from './index.js';
-import { units } from '../constants/index.js';
 
 /***************************
  * INPUT MUST BE IN STRING *
@@ -32,28 +26,19 @@ import { units } from '../constants/index.js';
 export function numberToWordMain(num) {
     if (!validate(num)) return 'not valid input';
 
-    let strNumber = removeAdditionalChar(num);
+    const strNumber = removeAdditionalChar(num);
 
-    let strFloat = splitFloatAndInt(strNumber).floatNumber;
+    const { strFloat, strInt } = splitFloatAndInt(strNumber);
 
-    let strInt = splitFloatAndInt(strNumber).intNumber;
+    const negative = negativeDetector(strInt); //return true or false //
 
-    const negative = negativeDetecter(strInt).isNegative; //return true or false
-    strInt = negativeDetecter(strInt).strNumber;
-    strInt = fixSizeOfNumber(strInt);
+    const positiveIntStr = removeNegativeSign(strInt);// if exists
 
-    strInt = stringNumberToArray(strInt);
+    const strIntOfArr = stringNumberToArray(positiveIntStr);
 
-    const intWord = intToWord(
-        numberToWords,
-        getD1,
-        getD2,
-        getD3,
-        units,
-        strInt
-    );
+    const intWord = intToWord(strIntOfArr);
 
-    const floatWord = floatDetectAndToWord(strFloat, floatToWord, getD1, units); //return number or ''
+    const floatWord = floatDetectAndToWord(strFloat); //return number or ''
 
     return createFinalResult(negative, intWord, floatWord);
 }

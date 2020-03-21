@@ -1,4 +1,6 @@
-# JavaScript/Front-end Developer - Exercise 1
+# JavaScript/Front-end Developer - Exercise 1 - Solution
+
+Live demo available at https://hamidrezanasrollahi.net/numeral-converter
 
 ## Instructions
 

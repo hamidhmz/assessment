@@ -14,5 +14,5 @@
 /* -------------------------------------------------------------------------- */
 
 export function validate(num) {
-    return num == parseFloat(num) && typeof num == 'string';
+    return ((num == parseFloat(num)) && (typeof num == 'string') && (num.length <= 30));
 }

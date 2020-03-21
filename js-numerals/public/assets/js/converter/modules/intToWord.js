@@ -8,15 +8,10 @@
                    |___/                                                
  
 */
+import { units } from '../constants/index.js';
+import { numberToWords, getD1, getD2, getD3 } from './index.js';
 
-export function intToWord(
-    numberToWords,
-    getD1,
-    getD2,
-    getD3,
-    units,
-    strNumber
-) {
+export function intToWord(strNumber) {
     return strNumber.reduce((result, value, i) => {
         const tempResult = numberToWords(
             getD1,

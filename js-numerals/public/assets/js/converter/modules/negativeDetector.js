@@ -8,16 +8,9 @@
                                             |___/                                                               
  
 */
-export function negativeDetecter(strNumber) {
+export function negativeDetector(strNumber) {
     if (strNumber.startsWith('-')) {
-        strNumber = strNumber.replace('-', '');
-        return {
-            isNegative: true,
-            strNumber: strNumber
-        };
+        return true;
     }
-    return {
-        isNegative: false,
-        strNumber: strNumber
-    };
+    return false;
 }

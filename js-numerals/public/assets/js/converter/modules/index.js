@@ -1,4 +1,3 @@
-import { numberInput, wordsTag } from './domInteraction.js';
 import { validate } from './validate.js';
 import { numberToWordMain } from './numberToWordMain.js';
 import { getD1, getD2, getD3 } from './getters.js';
@@ -10,12 +9,11 @@ import { floatToWord } from './floatToWord.js';
 import { splitFloatAndInt } from './splitFloatAndInt.js';
 import { removeAdditionalChar } from './removeAdditionalChar.js';
 import { createFinalResult } from './createResult.js';
-import { negativeDetecter } from './negativeDetecter.js';
+import { negativeDetector } from './negativeDetector.js';
 import { floatDetectAndToWord } from './floatDetectAndToWord.js';
+import { removeNegativeSign } from './removeNegativeSign.js';
 
 export {
-    numberInput,
-    wordsTag,
     validate,
     numberToWordMain,
     getD1,
@@ -29,6 +27,7 @@ export {
     splitFloatAndInt,
     removeAdditionalChar,
     createFinalResult,
-    negativeDetecter,
-    floatDetectAndToWord
+    negativeDetector,
+    floatDetectAndToWord,
+    removeNegativeSign
 };
