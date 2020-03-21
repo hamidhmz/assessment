@@ -26,17 +26,17 @@ import {
 export function numberToWordMain(num) {
     if (!validate(num)) return 'not valid input';
 
-    let strNumber = removeAdditionalChar(num);
+    const strNumber = removeAdditionalChar(num);
 
-    let { strFloat, strInt } = splitFloatAndInt(strNumber);
+    const { strFloat, strInt } = splitFloatAndInt(strNumber);
 
     const negative = negativeDetector(strInt); //return true or false //
 
-    strInt = removeNegativeSign(strInt);// if exists
+    const positiveIntStr = removeNegativeSign(strInt);// if exists
 
-    strInt = stringNumberToArray(strInt);
+    const strIntOfArr = stringNumberToArray(positiveIntStr);
 
-    const intWord = intToWord(strInt);
+    const intWord = intToWord(strIntOfArr);
 
     const floatWord = floatDetectAndToWord(strFloat); //return number or ''
 
